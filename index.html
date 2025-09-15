@@ -3,61 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Partnership Proposal: Egypt Pet Food Manufacturing Initiative</title>
+    <title>Strategic Partnership Proposal - Egypt Pet Food Manufacturing Initiative</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e5e7eb; /* Light Gray background for contrast */
+            background-color: #f0f2f5; /* A neutral background to highlight the pages */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .slide {
+        .page {
             background-color: #ffffff;
-            width: 100%;
-            max-width: 1100px;
+            width: 21cm; /* A4 width */
+            min-height: 29.7cm; /* A4 height */
             margin: 2rem auto;
-            padding: 3rem 4rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid #d1d5db;
-            border-radius: 0.25rem;
+            padding: 2cm;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
-        .slide-header {
+        .page-header, .page-footer {
+            width: calc(100% - 4cm);
+            position: absolute;
+            left: 2cm;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        
+        .page-header {
+            top: 1cm;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 0.5rem;
+            text-align: right;
+        }
+
+        .page-footer {
+            bottom: 1cm;
+            border-top: 1px solid #d1d5db;
+            padding-top: 0.5rem;
             display: flex;
-            align-items: center;
-            border-bottom: 2px solid #3b82f6; /* Blue accent line */
-            padding-bottom: 1rem;
+            justify-content: space-between;
+        }
+        
+        body {
+            counter-reset: page;
+        }
+        .page-footer .page-number::after {
+            counter-increment: page;
+            content: counter(page);
+        }
+
+        .page-content {
+            flex-grow: 1;
+            padding-top: 1.5rem;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: #111827;
+        }
+        
+        .title-page h1 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+        }
+        
+        .title-page h2 {
+            font-size: 1.5rem;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: #1e3a8a;
+            border-bottom: 2px solid #93c5fd;
+            padding-bottom: 0.5rem;
             margin-bottom: 2rem;
         }
-
-        .slide-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #3b82f6;
-            margin-right: 1.5rem;
-            line-height: 1;
-        }
-
-        .slide-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1f2937;
-        }
-
-        .stat-card {
-            background-color: #f9fafb;
-            border-left: 5px solid #3b82f6;
-            padding: 1.5rem;
-            border-radius: 0.25rem;
-        }
-
+        
         .chart-container {
             position: relative;
             width: 100%;
-            height: 350px;
+            max-width: 600px;
+            margin: 1rem auto;
+            height: 300px;
         }
 
         @media print {
@@ -66,144 +102,215 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            .slide {
-                box-shadow: none !important;
-                border: none;
+            .page {
                 margin: 0;
-                padding: 1rem;
+                box-shadow: none;
+                padding: 1.5cm;
                 page-break-after: always;
+                min-height: 0;
             }
-            .slide:last-child {
+            .page:last-child {
                 page-break-after: auto;
             }
-            .no-print {
-                display: none;
+            .page-header, .page-footer {
+                width: calc(100% - 3cm);
+                left: 1.5cm;
             }
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body>
 
-    <div class="slide">
-        <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-4">Strategic Partnership Proposal</h1>
-        <p class="text-2xl text-center text-gray-600">Egypt Pet Food Manufacturing Initiative</p>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div class="p-6 bg-gray-50 rounded-md">
-                <h2 class="text-xl font-bold text-blue-600 mb-2">1. Market Opportunity</h2>
-                <p class="text-gray-700">Egypt's $2.5B+ animal feed market with significant GCC expansion potential.</p>
-            </div>
-            <div class="p-6 bg-gray-50 rounded-md">
-                <h2 class="text-xl font-bold text-blue-600 mb-2">2. Partnership Model</h2>
-                <p class="text-gray-700">Combine technical expertise with local market access to create a regional manufacturing hub.</p>
-            </div>
-            <div class="p-6 bg-gray-50 rounded-md">
-                <h2 class="text-xl font-bold text-blue-600 mb-2">3. Strategic Value</h2>
-                <p class="text-gray-700">Establish a cost-competitive base to serve the $8.24B MENA regional market.</p>
+    <!-- Page 1: Title Page -->
+    <div class="page title-page">
+        <div class="page-content flex flex-col justify-center items-center text-center">
+            <div class="w-full">
+                <h1 class="mb-4">Strategic Partnership Proposal</h1>
+                <h2 class="mb-12">Egypt Pet Food Manufacturing Initiative</h2>
+                <div class="border-t border-b border-gray-300 py-6 w-3/4 mx-auto">
+                    <p class="text-lg text-gray-800">Prepared for: <strong class="font-semibold">C&D Foods</strong></p>
+                    <p class="text-lg text-gray-800">Prepared by: <strong class="font-semibold">Investory & Partners</strong></p>
+                </div>
+                 <p class="mt-24 text-sm text-gray-500">This document outlines a collaborative opportunity to establish a regional manufacturing hub in Egypt, leveraging complementary strengths for mutual growth in the MENA pet food market.</p>
             </div>
         </div>
-        <p class="mt-12 text-center text-lg text-gray-800">This partnership will position both organizations to capitalize on Egypt's emerging pet food market while establishing a strategic manufacturing base for regional expansion.</p>
+        <footer class="page-footer">
+            <span>Confidential</span>
+            <span class="page-number"></span>
+        </footer>
     </div>
 
-    <div class="slide">
-        <div class="slide-header">
-            <div class="slide-number">1</div>
-            <h2 class="slide-title">Market Opportunity Analysis</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Egyptian Market Dynamics</h3>
-                <ul class="space-y-4 text-lg">
-                    <li class="flex items-start">
-                        <span class="text-blue-500 font-bold mr-3">▶</span>
-                        <div><strong class="font-semibold text-gray-900">Growing Market:</strong> Valued at $2.51B in 2024, showing steady growth.</div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 font-bold mr-3">▶</span>
-                        <div><strong class="font-semibold text-gray-900">Cost Advantages:</strong> Access to low-cost inputs and competitive labor.</div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 font-bold mr-3">▶</span>
-                         <div><strong class="font-semibold text-gray-900">Agricultural Resources:</strong> Strong local supply of raw materials.</div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 font-bold mr-3">▶</span>
-                         <div><strong class="font-semibold text-gray-900">Strategic Location:</strong> A natural gateway to Africa and the Middle East.</div>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                 <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Regional Expansion Potential</h3>
-                <div class="stat-card mb-4">
-                    <p class="text-lg text-gray-600">UAE Pet Food Market by 2033</p>
-                    <p class="text-4xl font-bold text-blue-700">$171.0 M</p>
+    <!-- Page 2: Executive Summary -->
+    <div class="page">
+        <header class="page-header">Strategic Partnership Proposal</header>
+        <div class="page-content">
+            <h2 class="section-title">Executive Summary</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                Following our recent meeting, this proposal outlines a joint venture opportunity for C&D Foods to establish a manufacturing presence in Egypt. By combining your proven technical expertise with our local market access and infrastructure, this partnership will enable C&D Foods to capitalize on Egypt's emerging market and create a cost-competitive base for expansion into the broader MENA region.
+            </p>
+            <div class="grid grid-cols-2 gap-8 mt-12">
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                    <h3 class="text-base font-semibold text-blue-800 mb-2">Egypt Animal Feed Market (2024)</h3>
+                    <p class="text-4xl font-bold text-blue-900">$2.51 Billion</p>
                 </div>
-                <div class="stat-card">
-                    <p class="text-lg text-gray-600">MENA Pet Food Market by 2033</p>
-                    <p class="text-4xl font-bold text-blue-700">$8.24 B</p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                    <h3 class="text-base font-semibold text-blue-800 mb-2">MENA Pet Food Market (Proj. 2033)</h3>
+                    <p class="text-4xl font-bold text-blue-900">$8.24 Billion</p>
                 </div>
             </div>
         </div>
+        <footer class="page-footer">
+            <span>Confidential</span>
+            <span class="page-number"></span>
+        </footer>
     </div>
 
-    <div class="slide">
-        <div class="slide-header">
-            <div class="slide-number">2</div>
-            <h2 class="slide-title">Proposed Partnership Structure</h2>
-        </div>
-        <p class="text-xl text-center text-gray-600 mb-8">A joint venture equity partnership designed to fuse complementary strengths.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-            <div class="absolute inset-0 flex items-center justify-center">
-                 <div class="w-16 h-16 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center text-3xl font-bold text-blue-600 hidden md:flex">+</div>
-            </div>
-            <div class="p-6 border-2 border-dashed border-gray-300 rounded-lg">
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">C&D Foods Contributions</h3>
-                <ul class="space-y-2 text-gray-700 text-lg list-disc list-inside">
-                    <li>Technical manufacturing know-how</li>
-                    <li>Product formulation & R&D</li>
-                    <li>Quality assurance protocols</li>
-                    <li>Equipment specification & design</li>
-                </ul>
-            </div>
-            <div class="p-6 border-2 border-dashed border-gray-300 rounded-lg">
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">Investory & Partners Contributions</h3>
-                <ul class="space-y-2 text-gray-700 text-lg list-disc list-inside">
-                    <li>Land, warehouse, and factory infrastructure</li>
-                    <li>Regulatory licensing & government relations</li>
-                    <li>Local market knowledge</li>
-                    <li>Distribution networks & local management</li>
-                </ul>
+    <!-- Page 3: Market Opportunity -->
+    <div class="page">
+        <header class="page-header">Strategic Partnership Proposal</header>
+        <div class="page-content">
+            <h2 class="section-title">Market Opportunity</h2>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Key Egyptian Market Dynamics</h3>
+            <ul class="list-disc list-inside space-y-3 text-lg text-gray-700 mb-8">
+                <li><strong class="font-semibold text-gray-900">Cost Advantages:</strong> Low-cost inputs and competitive labor reduce production overhead.</li>
+                <li><strong class="font-semibold text-gray-900">Agricultural Resources:</strong> Strong local supply of raw materials from vast agricultural lands.</li>
+                <li><strong class="font-semibold text-gray-900">Strategic Location:</strong> A natural gateway to both African and Middle Eastern markets.</li>
+            </ul>
+             <h3 class="text-xl font-semibold text-gray-800 mb-4">Regional Expansion Potential (Market Value Proj. 2033)</h3>
+            <div class="chart-container">
+                <canvas id="regionalMarketChart"></canvas>
             </div>
         </div>
+        <footer class="page-footer">
+            <span>Confidential</span>
+            <span class="page-number"></span>
+        </footer>
+    </div>
+    
+    <!-- Page 4: Partnership Model -->
+    <div class="page">
+         <header class="page-header">Strategic Partnership Proposal</header>
+        <div class="page-content">
+            <h2 class="section-title">Proposed Partnership Model</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">We propose a collaborative equity partnership structure designed to capitalize on the unique strengths of each partner, creating a synergistic force for market leadership.</p>
+            <div class="grid grid-cols-2 gap-8 mt-8">
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">C&D Foods Contributions</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
+                        <li>Technical manufacturing know-how</li>
+                        <li>Product formulation & R&D</li>
+                        <li>Quality assurance protocols</li>
+                        <li>Equipment specification & design</li>
+                    </ul>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Investory & Partners Contributions</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
+                        <li>Land and factory infrastructure</li>
+                        <li>Regulatory licensing</li>
+                        <li>Local market knowledge</li>
+                        <li>Distribution & operational management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <footer class="page-footer">
+            <span>Confidential</span>
+            <span class="page-number"></span>
+        </footer>
     </div>
 
-    <div class="slide">
-        <div class="slide-header">
-            <div class="slide-number">3</div>
-            <h2 class="slide-title">Strategic Rationale & Mutual Value</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-2xl font-bold text-blue-800 mb-4">For C&D Foods</h3>
-                <ul class="space-y-3 text-lg">
-                    <li class="flex"><strong class="text-blue-600 mr-2">✓</strong><div><strong>Market Expansion:</strong> Low-risk entry into the high-growth MENA region.</div></li>
-                    <li class="flex"><strong class="text-blue-600 mr-2">✓</strong><div><strong>Manufacturing Base:</strong> Cost-competitive production platform for regional supply.</div></li>
-                    <li class="flex"><strong class="text-blue-600 mr-2">✓</strong><div><strong>Risk Mitigation:</strong> Shared investment and operational responsibilities.</div></li>
-                </ul>
+    <!-- Page 5: Strategic Rationale -->
+    <div class="page">
+        <header class="page-header">Strategic Partnership Proposal</header>
+        <div class="page-content">
+            <h2 class="section-title">Strategic Rationale & Mutual Benefits</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">For C&D Foods</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
+                        <li>Low-risk entry into the high-growth MENA region.</li>
+                        <li>Establish a cost-competitive production base for regional supply.</li>
+                        <li>Mitigate risk through shared investment and responsibilities.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">For Investory & Partners</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
+                        <li>Access proven European manufacturing standards.</li>
+                        <li>Leverage established formulations for speed to market.</li>
+                        <li>Build a robust platform for regional export and expansion.</li>
+                    </ul>
+                </div>
             </div>
-             <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">For Investory & Partners</h3>
-                <ul class="space-y-3 text-lg">
-                    <li class="flex"><strong class="text-gray-600 mr-2">✓</strong><div><strong>Technical Excellence:</strong> Access proven European manufacturing standards.</div></li>
-                    <li class="flex"><strong class="text-gray-600 mr-2">✓</strong><div><strong>Speed to Market:</strong> Leverage established product formulations and know-how.</div></li>
-                    <li class="flex"><strong class="text-gray-600 mr-2">✓</strong><div><strong>Export Potential:</strong> Build a robust platform for regional expansion and sales.</div></li>
-                </ul>
+            <div class="mt-12 bg-gray-100 p-6 rounded-lg border">
+                 <h3 class="text-xl font-semibold text-gray-800 mb-3">Conclusion</h3>
+                 <p class="text-lg text-gray-700 leading-relaxed">This partnership represents a significant opportunity to combine world-class manufacturing capabilities with deep local market expertise. Egypt's strategic advantages provide an ideal foundation for a regional hub, aligning perfectly with C&D Foods' growth trajectory while offering substantial returns through shared market development.</p>
             </div>
         </div>
-        <div class="mt-8 bg-gray-800 text-white p-6 rounded-lg text-center">
-            <h3 class="text-2xl font-bold">Conclusion: A Compelling Opportunity</h3>
-            <p class="mt-2 text-lg text-gray-300">This joint venture creates significant value by combining world-class manufacturing with deep local expertise, capitalizing on complementary strengths to achieve market leadership in the MENA region.</p>
-        </div>
+        <footer class="page-footer">
+            <span>Confidential</span>
+            <span class="page-number"></span>
+        </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const regionalMarketCtx = document.getElementById('regionalMarketChart').getContext('2d');
+        new Chart(regionalMarketCtx, {
+            type: 'bar',
+            data: {
+                labels: ['UAE Market', 'MENA Market'],
+                datasets: [{
+                    label: 'Market Value by 2033 (USD)',
+                    data: [171000000, 8240000000],
+                    backgroundColor: ['#60a5fa', '#2563eb'],
+                    borderRadius: 4,
+                    borderWidth: 1,
+                    borderColor: '#9ca3af'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                if (value >= 1e9) return '$' + (value / 1e9) + 'B';
+                                if (value >= 1e6) return '$' + (value / 1e6) + 'M';
+                                return '$' + value;
+                            },
+                            font: { size: 14 }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 14 }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 
